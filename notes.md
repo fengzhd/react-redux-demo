@@ -1,8 +1,6 @@
-# redux笔记
+# redux
 
-通过阅读阮一峰老师的redux教程，终于把redux理解了个大概，在这里记录一下。以下均为个人理解内容。原文[戳这里](<http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html>)
-
-###### Redux工作流程
+###### 工作流程
 
 1. 组件中触发 action 中的函数（可以传入数据）
 2. action 中的函数通过 dispatch 将指定类型的 action 发送至 store（可以携带数据）
@@ -12,7 +10,7 @@
 6. store 收到新的 state 传递给组件
 7. 组件收到更新信息作出相应的视图更新操作
 
-###### 计数器Demo
+###### demo
 
 1. 使用 create-react-app 创建 react 项目
 
@@ -112,24 +110,24 @@
 
 10. 在 actions 文件夹下创建 action.js 文件，用来存储各种方法
 
-    ```javascript
-    import {ADD, SUB} from './actionsTypes'
-    export const sub = () => dispatch => {	// 定义一个减1的函数，返回一个参数为 dispatch 的函数
-        console.log('触发了sub')
-        return dispatch({						// 将 action dispatch 到 reducer，这时会打印 ’触发了reducer‘
-            type: SUB
-        })
-    }
-    
-    export const add = () => dispatch => {
-        console.log('触发了add')
-        return dispatch({
-            type: ADD
-        })
-    }
-    ```
+   ```javascript
+   import {ADD, SUB} from './actionsTypes'
+   export const sub = () => dispatch => {	// 定义一个减1的函数，返回一个参数为 dispatch 的函数
+       console.log('触发了sub')
+       return dispatch({						// 将 action dispatch 到 reducer，这时会打印 ’触发了reducer‘
+           type: SUB
+       })
+   }
+   
+   export const add = () => dispatch => {
+       console.log('触发了add')
+       return dispatch({
+           type: ADD
+       })
+   }
+   ```
 
-    
+   
 
 11. 创建 reducers 文件夹, 用来存放各个reducer， 每个reducer 相当于一个子 state
 
